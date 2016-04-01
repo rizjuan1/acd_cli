@@ -554,6 +554,7 @@ def mount(path: str, args: dict, **kwargs):
 
     FUSE(ACDFuse(**args), path, entry_timeout=60, attr_timeout=60,
          auto_cache=True, sync_read=True,
+         big_writes=True,
          uid=os.getuid(), gid=os.getgid(),
          subtype=ACDFuse.__name__,
          **kwargs
